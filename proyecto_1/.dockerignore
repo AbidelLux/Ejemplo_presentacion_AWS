@@ -1,0 +1,5 @@
+api/node_modules
+src/run
+src/*.o
+include/*.o
+**/*.dsk

@@ -21,3 +21,17 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+
+### proyecto_1 (C++) ###
+proyecto_1/src/run
+proyecto_1/src/*.o
+proyecto_1/include/*.o
+proyecto_1/**/*.dsk
+
+### Node / API wrapper ###
+**/node_modules/
+
+### Frontend (React + Vite) ###
+frontend/dist/
+frontend/.env.local
+frontend/.env.*.local

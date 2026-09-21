@@ -1,0 +1,14 @@
+{
+  "name": "proyecto1-api",
+  "version": "1.0.0",
+  "description": "API HTTP que envuelve el binario de proyecto_1 (simulador de sistema de archivos) para exponerlo como una consola remota.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}

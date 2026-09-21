@@ -1,0 +1,31 @@
+# Orquestacion SOLO para desarrollo/pruebas locales.
+#
+# El despliegue real es distinto:
+#   - proyecto_1 (este servicio "api")  -> se monta en una instancia EC2.
+#   - frontend                          -> se compila con `npm run build`
+#     (usando .env.production) y el contenido de dist/ se sube a un bucket
+#     S3 configurado como sitio web estatico. El servicio "frontend" de
+#     aqui abajo (nginx) es solo para previsualizar ese build localmente.
+services:
+  api:
+    build:
+      context: ./proyecto_1
+    ports:
+      - "8000:8000"
+    volumes:
+      - proyecto1_data:/data
+    environment:
+      - PORT=8000
+      - DATA_DIR=/data
+      - ALLOWED_ORIGIN=*
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - api
+
+volumes:
+  proyecto1_data:
